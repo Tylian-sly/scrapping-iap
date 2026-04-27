@@ -5,6 +5,38 @@
 
 ---
 
+## Prompt de départ (à coller dans Claude Code)
+
+```
+Tu vas scraper des contacts de prospection via Apify.
+
+Contexte : je teste un workflow de sourcing B2B automatisé depuis Claude Code,
+avec l'objectif de l'enseigner à des entrepreneurs qui veulent prospecter en cold
+email ou cold call sans passer par des outils payants comme Apollo ou Kaspr.
+
+Variable d'environnement à définir avant tout :
+export APIFY_TOKEN="apify_api_XXXXXXXXXXXXXXXXXXXX"
+
+Étape 1 — Installe le CLI Apify si absent :
+npm install -g apify-cli
+
+Étape 2 — Lance un scraping Google Maps :
+- Cible : "restaurant" à [VILLE], France
+- Volume : 30 résultats
+- Champs à récupérer : nom, adresse, site web, téléphone, note Google, nombre d'avis
+- Exclure les grands groupes
+
+Étape 3 — Une fois le run terminé, récupère les résultats et exporte-les en CSV
+propre avec les colonnes : Entreprise, Adresse, Site, Telephone, Note, Nb_Avis, Email
+
+Étape 4 — Affiche un résumé : nombre de résultats obtenus, top 5 par note,
+entreprises sans site web identifiées.
+```
+
+> Remplace `APIFY_TOKEN` par ton token et `[VILLE]` par ta cible géographique.
+
+---
+
 ## Prérequis
 
 - [Node.js](https://nodejs.org) installé (v18+)
